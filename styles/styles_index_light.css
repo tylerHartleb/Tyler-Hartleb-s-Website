@@ -1,0 +1,382 @@
+body{
+    background: #ededed;
+}
+
+hr {
+    border-color: #c9c9c9;
+}
+
+p, h1, h2, h3, li, a {
+    color: #424243;
+}
+
+
+/*
+The following Styles are for the navbar
+*/
+
+.content_nav{
+    background-color: #ededed;
+    box-shadow: 0 12px 5px -5px #c9c9c9;  
+}
+
+.list{
+    background-color: #Ededed;
+    box-shadow: 0 12px 5px -5px #c9c9c9;
+}
+
+.menu{
+    background: linear-gradient(145deg, #d5d5d5, #fefefe);
+    box-shadow: 4px 4px 7px #c9c9c9, 
+                -4px -4px 7px #ffffff;
+}
+
+.menu:hover{
+    background: linear-gradient(145deg, #d5d5d5, #fefefe);
+    box-shadow: 4px 4px 7px #c9c9c9, 
+                -4px -4px 7px #ffffff;
+}
+
+.about_me{
+    background: linear-gradient(145deg, #d5d5d5, #fefefe);
+    box-shadow: 4px 4px 7px #c9c9c9, 
+                -4px -4px 7px #ffffff;
+}
+
+.about_me:hover{
+    background: linear-gradient(145deg, #d5d5d5, #fefefe);
+    box-shadow: 4px 4px 7px #c9c9c9, 
+                -4px -4px 7px #ffffff;
+}
+
+.about_me:active{
+    box-shadow: inset 4px 4px 7px #5a5c5e, 
+    inset -4px -4px 7px #e7ecf3;
+    color: #676767;
+}
+
+.skills{
+    background: linear-gradient(145deg, #d5d5d5, #fefefe);
+    box-shadow: 4px 4px 7px #c9c9c9, 
+                -4px -4px 7px #ffffff;
+}
+
+.skills:hover{
+    background: linear-gradient(145deg, #d5d5d5, #fefefe);
+    box-shadow: 4px 4px 7px #c9c9c9, 
+                -4px -4px 7px #ffffff;
+}
+
+.skills:active{
+    box-shadow: inset 4px 4px 7px #5a5c5e, 
+    inset -4px -4px 7px #e7ecf3;
+    color: #676767;
+}
+
+.portfolio{
+    background: linear-gradient(145deg, #d5d5d5, #fefefe);
+    box-shadow: 4px 4px 7px #c9c9c9, 
+                -4px -4px 7px #ffffff;
+}
+
+.portfolio:hover{
+    background: linear-gradient(145deg, #d5d5d5, #fefefe);
+    box-shadow: 4px 4px 7px #c9c9c9, 
+                -4px -4px 7px #ffffff;
+}
+
+.portfolio:active{
+    box-shadow: inset 4px 4px 7px #5a5c5e, 
+                inset -4px -4px 7px #e7ecf3;
+    color: #676767;
+}
+
+.contact{
+    background: linear-gradient(145deg, #d5d5d5, #fefefe);
+    box-shadow: 4px 4px 7px #c9c9c9, 
+                -4px -4px 7px #ffffff;
+}
+
+.contact:hover{
+    background: linear-gradient(145deg, #d5d5d5, #fefefe);
+    box-shadow: 4px 4px 7px #c9c9c9, 
+                -4px -4px 7px #ffffff;
+}
+
+.contact:active{
+    box-shadow: inset 4px 4px 7px #5a5c5e, 
+                inset -4px -4px 7px #e7ecf3;
+    color: #676767;
+}
+
+.home{
+    box-shadow: 1px 1px 7px #c9c9c9, 
+    -4px -4px 7px #ffffff;
+}
+
+.mode{
+    background: linear-gradient(145deg, #d5d5d5, #fefefe);
+    box-shadow: 4px 4px 7px #c9c9c9, 
+                -4px -4px 7px #ffffff;
+}
+
+.mode:hover{
+    background: linear-gradient(145deg, #d5d5d5, #fefefe);
+    box-shadow: 4px 4px 7px #c9c9c9, 
+                -4px -4px 7px #ffffff;
+}
+
+.mode:active{
+    box-shadow: inset 4px 4px 7px #c9c9c9, 
+                inset -4px -4px 7px #ffffff;
+}
+
+.active .menu {
+    box-shadow: inset 4px 4px 7px #c9c9c9, 
+                inset -4px -4px 7px #ffffff;
+}
+
+/*
+The following is for the header
+*/
+
+@media only screen and (max-width: 767px) {
+
+header{
+    box-shadow: 0 12px 5px -5px #c9c9c9;  
+    background-image: url("../img/background_mobile.png");
+}
+
+header .header_content .header_content_inner h1{
+    color: #4b4b4b;
+}
+
+}
+
+/*
+The following content is for the about section
+*/
+
+#about {
+    background-color: #ededed;
+    box-shadow: 0 12px 5px -5px #c9c9c9;  
+    z-index: 2;
+}
+
+#about .about_content {
+    color: #424243;
+}
+
+@media only screen and (max-width: 767px) {
+  
+    .scroll_down span{
+        border-bottom: 2px solid #424243;
+        border-right: 2px solid #424243;
+    }
+
+    .menu span {
+        background-color: #17adee;
+    }
+}
+
+/*
+The following content is for the skills sections
+*/
+
+#skills {
+    box-shadow:  0 12px 5px -5px #c9c9c9;
+}
+
+#skills .skills_content .front_end ul .computer_icon {
+    border-radius: 5px;
+    box-shadow:  7px 7px 14px #c9c9c9, 
+                -7px -7px 14px #ffffff;
+    background-image: url("../img/computer_icon.svg"), linear-gradient(145deg, #d5d5d5, #fefefe);
+    background-size: cover;
+    background-position: center;
+}
+
+#skills .skills_content .compile ul .server_icon {
+    border-radius: 5px;
+    box-shadow:  7px 7px 14px #c9c9c9, 
+                -7px -7px 14px #ffffff;
+    background-image: url("../img/server_icon.svg"), linear-gradient(145deg, #d5d5d5, #fefefe);
+    background-size: cover;
+    background-position: center;
+}
+
+#skills .skills_content .other ul .cog_icon {
+    border-radius: 5px;
+    box-shadow:  7px 7px 14px #c9c9c9, 
+                -7px -7px 14px #ffffff;
+    background: linear-gradient(145deg, #d5d5d5, #fefefe);
+    z-index: -1;
+}
+#skills .skills_content .other ul .cog_icon .cog_back {
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+    position: relative;
+    background-image: url("../img/cog_icon.svg");
+    background-size: cover;
+    background-position: center;
+}
+
+/*
+The following is for the portfolio section
+*/
+
+#portfolio {
+    box-shadow:  0 12px 5px -5px #c9c9c9;
+}
+
+.card {
+    background: linear-gradient(145deg, #d5d5d5, #fefefe);
+    box-shadow:  12px 12px 24px #c2c2c2, 
+                -12px -12px 24px #ffffff;
+}
+
+#web_pro {
+    background-image: url("../img/web_icon.svg"), linear-gradient(145deg, #159cd6, #19b9ff);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: solid #ededed;
+    border-width: 10px;
+    box-shadow:  7px 7px 14px #bebebe, 
+            -7px -7px 14px #ffffff,
+            inset 9px 9px 18px #1285b7, 
+            inset -9px -9px 18px #1cd5ff;  
+}
+
+.card .read_more {
+    border-radius: 10px;
+    background: linear-gradient(145deg, #d5d5d5, #fefefe);
+    box-shadow:  5px 5px 10px #b2b2b2, 
+                 -5px -5px 10px #ffffff;
+}
+
+/* 
+The following is for the contact me section
+*/
+
+.icon {
+    border-radius: 5px;
+    box-shadow:  4px 4px 8px #c9c9c9, 
+             -4px -4px 8px #ffffff;
+    background-size: cover;
+    background-position: center;
+}
+
+#twitter {
+    background-image: url("../img/twitter_icon.svg"), linear-gradient(145deg, #d5d5d5, #fefefe);
+}
+
+#github {
+    background-image: url("../img/github_icon.svg"), linear-gradient(145deg, #d5d5d5, #fefefe);
+}
+
+#mail {
+    background-image: url("../img/mail_icon.svg"), linear-gradient(145deg, #d5d5d5, #fefefe);
+}
+
+#twitter:hover {
+    background-image: url("../img/twitter_icon_dark.svg"), linear-gradient(145deg, #1a91da, #1facff);
+}
+
+#github:hover {
+    background-image: url("../img/github_icon_dark.svg"), linear-gradient(145deg, #222222, #292929);
+}
+
+#mail:hover {
+    background-image: url("../img/mail_icon_dark.svg"), linear-gradient(135deg, #cc5050, #f35f5f)
+}
+
+@media only screen and (min-width: 768px){
+
+    header {
+        box-shadow: 0 12px 5px -5px #c9c9c9;  
+        background-image: url("../img/background_desktop.png");
+    }
+
+    .header_content .header_content_inner {
+        margin: auto;
+        position: relative;
+    }
+
+    .about_me{
+        box-shadow: none;
+        background: none;
+        color:#424243;
+    }
+    .about_me:hover{
+        box-shadow: none;
+        background: none;
+    }
+
+    .skills{
+        box-shadow: none;
+        background: none;
+        color:#424243;
+    }
+    .skills:hover{
+        box-shadow: none;
+        background: none;
+    }
+
+    .portfolio{
+        box-shadow: none;
+        background: none;
+        color:#424243;
+    }
+    .portfolio:hover{
+        box-shadow: none;
+        background: none;
+    }
+
+    .contact{
+        box-shadow: none;
+        background: none;
+        color:#424243;
+    }
+    .contact:hover{
+        box-shadow: none;
+        background: none;
+    }
+
+    .home_list{
+        box-shadow: 1px 1px 7px #5a5c5e, 
+        -4px -4px 7px #e7ecf3;
+    }
+
+    .mode_list{
+        background: #ededed;
+        background: linear-gradient(145deg, #d5d5d5, #fefefe);
+        box-shadow: 4px 4px 7px #c9c9c9, 
+                    -4px -4px 7px #ffffff;
+    }
+    
+    .mode_list:active{
+        box-shadow: inset 4px 4px 7px #c9c9c9, 
+                    inset -4px -4px 7px #ffffff;
+    }
+
+    header .header_content .header_content_inner a{
+        background: linear-gradient(145deg, #d5d5d5, #fefefe);
+        box-shadow:  5px 5px 10px #e4e4e4, 
+                    -5px -5px 10px #f6f6f6;
+    }
+
+    header .scroll_down_desktop .mouse_border {
+        border-color: #424243;
+    }
+
+    header .scroll_down_desktop .mouse_wheel {
+        border-color: #424243;
+        background-color: #424243;
+    }
+
+    header .scroll_down_desktop .arrow {
+        border-color: #424243;
+    }
+}

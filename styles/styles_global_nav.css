@@ -1,0 +1,413 @@
+/*  Author: Tyler Hartleb
+    Initial Date: 7/15/2020
+    Last Update: 7/15/2020
+    Version: 0.5 alpha
+
+    The function of this css is to provide styling for the nav bar of this webpage.
+
+*/
+
+body, header, ul, li, h1, h2, a{
+    margin: 0;
+    padding: 0;
+    font-family:    "Segoe UI", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
+                    Helvetica, Arial, "Lucida Grande", sans-serif;
+    list-style: none;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+.content_nav{
+    box-sizing: content-box;             
+    position: fixed;
+    width: 100%;
+    height: 48px;
+    z-index: 5;
+    transition: height 0.2s;
+}
+
+.list{
+    visibility: hidden;
+    overflow: hidden;
+    box-sizing: content-box;
+    position: fixed;
+    top: 48px;
+    width: 100%;
+    height: 0px;
+    z-index: 4;
+    transition: height 0.2s;
+    text-align: center;
+}
+
+
+/* This is specfic styling for the mobile website */
+@media only screen and (max-width:767px){
+
+    .content .content_nav{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        overflow: hidden;
+    }
+
+    .menu{
+        margin:auto;
+        margin-left: 9px;
+        width: 36px;
+        height: 36px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .menu span{
+        box-shadow: 0px 0px 10px 0px rgba(240,128,128,0.3);
+        width: 18px;
+        height: 2px;
+        margin: 1px 0px 1px 0px;
+        transition: margin 0.2s, transform 0.2s, background-color 0.2s linear;
+    }
+
+    .menu:hover{
+        cursor: pointer;
+    }
+
+    .list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .list li{
+        text-align: center;
+    }
+
+    .home_list {
+        display: none;
+    }
+
+    .mode_list {
+        display:none;
+    }
+
+    .about_me {
+        width: auto;
+        height: 24px;
+        margin: 12px 12px 6px 6px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .about_me:hover{
+        cursor: pointer;
+    }
+
+    .skills {
+        width: auto;
+        margin: 12px 12px 6px 6px;
+        height: 24px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .skills:hover{
+        cursor: pointer;
+    }
+
+    .portfolio {
+        width: auto;
+        height: 24px;
+        margin: 12px 12px 6px 6px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .portfolio:hover{
+        cursor: pointer;
+    }
+
+    .contact {
+        width: auto;
+        height: 24px;
+        margin: 12px 12px 6px 6px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .contact:hover{
+        cursor: pointer;
+    }
+
+    .home{
+        margin: auto;
+        width: 48px;
+        height: 48px;
+        box-sizing: border-box;
+        border-radius: 150px;
+        background-size: cover;
+        top: 6px;
+        background-repeat: no-repeat;
+        background-image:   url("../img/Tyler_headshot_2_cropped.jpeg");
+        background-position: center center;     
+    }
+
+    .home:hover{
+        width: 46px;
+        height: 46px;
+        background-size: 46px, 46px;
+        cursor: pointer;
+    }
+
+    .mode {
+        margin: auto;
+        margin-right: 9px;
+        width: 36px;
+        height: 36px;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+
+    .mode:hover{
+        cursor: pointer;
+    }
+
+    .active .content .menu span{
+        margin: -1px;
+        background-color: #e74a23;
+    }
+
+    .active .content .menu span:nth-child(1){
+        transform: rotate(-45deg);
+    }
+
+    .active .content .menu span:nth-child(2){
+        transform: rotate(45deg);
+    }
+
+    .menu_opening .list{
+        visibility: visible;
+        height: 48px;
+    }
+
+    .active .list{
+        visibility: visible;
+        height: 48px;
+    }
+
+    .menu_closing .list{
+        visibility: visible;
+        height: 0px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .content_nav{
+        height: 0px;
+    }
+    
+    .content .list{
+        visibility: visible;
+        display: grid;
+        grid-template-columns: 1fr 15% 10% 10% 10% 7.5%;
+        overflow: hidden;
+        box-sizing: content-box;
+        top: 0px;
+        width: 100%;
+        height: 48px;
+        z-index: 5;
+        padding: 0px;
+    }
+
+    .content .list .home_list{
+        float: left;
+        margin:auto;
+        margin-left: 9px;
+        width: 42px;
+        height: 42px;
+        box-sizing: border-box;
+        border-radius: 150px;
+        background-size: 42px 42px;
+        top: 6px;
+        text-align: center;
+        background-repeat: no-repeat;
+        background-image:   url("../img/Tyler_headshot_2_cropped.jpeg");
+        background-position: center center; 
+    }
+
+    .content .list .home_list:hover{
+        width: 46px;
+        height: 46px;
+        background-size: 46px, 46px;
+        cursor: pointer;
+    }
+
+    .about_me {
+        width: auto;
+        height: 24px;
+        margin: 12px 12px 6px 6px;
+        float: right;
+        box-sizing: border-box;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .about_me:hover{
+        cursor: pointer;
+    }
+
+    .skills {
+        width: auto;
+        margin: 12px 12px 6px 6px;
+        height: 24px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .skills:hover{
+        cursor: pointer;
+    }
+
+    .portfolio {
+        width: auto;
+        height: 24px;
+        margin: 12px 12px 6px 6px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .portfolio:hover{
+        cursor: pointer;
+    }
+
+    .contact {
+        width: auto;
+        height: 24px;
+        margin: 12px 12px 6px 6px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .contact:hover{
+        cursor: pointer;
+    }
+
+    .mode_list {
+        margin: auto;
+        margin-right: 9px;
+        width: 36px;
+        height: 36px;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+
+    .mode_list:hover{
+        cursor: pointer;
+    }
+
+}
+
+@media only screen and (min-width: 1025px) {
+    .content .list {
+        grid-template-columns: 1fr 10% 7.5% 7.5% 7.5% 5%;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+
+    .content_nav{
+        height: 0px;
+    }
+    
+    .content .list{
+        visibility: visible;
+        display: grid;
+        grid-template-columns: 1fr 10% 7.5% 7.5% 7.5% 5%;
+        overflow: hidden;
+        box-sizing: content-box;
+        top: 0px;
+        width: 100%;
+        height: 48px;
+        z-index: 5;
+        padding: 0px;
+    }
+
+    .content .list .home_list:hover{
+        width: 46px;
+        height: 46px;
+        background-size: 46px, 46px;
+        cursor: pointer;
+    }
+
+    .skills {
+        width: auto;
+        margin: 12px 12px 6px 6px;
+        height: 24px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .skills:hover{
+        cursor: pointer;
+    }
+
+    .portfolio {
+        width: auto;
+        height: 24px;
+        margin: 12px 12px 6px 6px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .portfolio:hover{
+        cursor: pointer;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+
+    .content_nav{
+        height: 0px;
+    }
+    
+    .content .list{
+        visibility: visible;
+        display: grid;
+        grid-template-columns: 1fr 7.5% 7.5% 7.5% 7.5% 5%;
+        overflow: hidden;
+        box-sizing: content-box;
+        top: 0px;
+        width: 100%;
+        height: 48px;
+        z-index: 5;
+        padding: 0px;
+    }
+
+    .content .list .home_list:hover{
+        width: 46px;
+        height: 46px;
+        background-size: 46px, 46px;
+        cursor: pointer;
+    }
+}

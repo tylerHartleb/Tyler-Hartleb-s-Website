@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width", initial scale=1.0>
+        <link rel="stylesheet" href="styles_global_nav.css">
+        <link id="pageStyle" rel="stylesheet" href="styles/styles_index_light.css">
+        <title>Tyler Hartleb</title> 
+        <script type="text/javascript" src="js/core.js"> </script>  
+        <script>
+            var name = "portfolio";
+        </script>
+    </head>
+
+    <body id=stylePage class="light_mode">
+        
+        <nav id="global_nav">
+            <div class = "content">
+                <ul class="header">
+                    <li onclick="menuAnimation(global_nav, list_menu), toggleClassActive(global_nav)" class="menu" id="nav_menu">
+                        <span></span>
+                        <span></span>
+                    </li>
+                    <li class="home" onclick="location.href='index.html'">
+                    </li>
+                    <li class="mode" onclick="toggleView(stylePage, pageStyle, name)">
+                        <a class="mode_btn" href="#"></a>
+                    </li>
+                </ul>
+                <ul class="list", id="list_menu">
+                    <li class="education" onclick="location.href='education.html'">
+                        Education
+                    </li>
+                    <li class ="portfolio" onclick="location.href='portfolio.html'">
+                        Portfolio
+                    </li>
+                    <li class="contact" onclick="location.href='contact.html'">
+                        Contact
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="main">
+            <ul>
+
+            </ul>
+        </div>
+
+    </body>
+
+
+
+
+</html>
