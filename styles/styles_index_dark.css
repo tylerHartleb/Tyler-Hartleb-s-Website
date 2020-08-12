@@ -100,25 +100,25 @@ The following Styles are for the navbar
 }
 
 .mode{
-    background: linear-gradient(145deg, #272727, #2e2e2e);
+    background-image: url("../img/moon_icon.svg"), linear-gradient(145deg, #272727, #2e2e2e);
     box-shadow:  4px 4px 9px #232323, 
                  -4px -4px 9px #333333;
 }
 
 .list .mode_list {
-    background: linear-gradient(145deg, #272727, #2e2e2e);
+    background-image: url("../img/moon_icon.svg"), linear-gradient(145deg, #272727, #2e2e2e);
     box-shadow:  4px 4px 9px #232323, 
                  -4px -4px 9px #333333;    
 }
 
 .mode:active{
-    background: #2b2b2b;
+    background-image: url("../img/moon_icon.svg"), linear-gradient(145deg, #272727, #2e2e2e);
     box-shadow: inset 4px 4px 9px #232323, 
                 inset -4px -4px 9px #333333
 }
 
 .list .mode_list:active {
-    background: #2b2b2b;
+    background-image: url("../img/moon_icon.svg"), linear-gradient(145deg, #272727, #2e2e2e);
     box-shadow: inset 4px 4px 9px #232323, 
                 inset -4px -4px 9px #333333   
 }
@@ -332,15 +332,15 @@ The following is for the contact me section
     }
 
     .mode_list{
-        background: #ededed;
-        background: linear-gradient(145deg, #d5d5d5, #fefefe);
-        box-shadow: 4px 4px 7px #c9c9c9, 
-                    -4px -4px 7px #ffffff;
+        background-image: url("../img/moon_icon.svg"), linear-gradient(145deg, #272727, #2e2e2e);
+        box-shadow:  20px 20px 60px #252525, 
+                    -20px -20px 60px #313131;
     }
     
     .mode_list:active{
-        box-shadow: inset 4px 4px 7px #c9c9c9, 
-                    inset -4px -4px 7px #ffffff;
+        background-image: url("../img/moon_icon.svg"), linear-gradient(145deg, #272727, #2e2e2e);
+        box-shadow: inset 20px 20px 60px #252525, 
+                    inset -20px -20px 60px #313131;
     }
 
     header .header_content .header_content_inner a{

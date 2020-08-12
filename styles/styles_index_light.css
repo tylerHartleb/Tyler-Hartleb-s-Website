@@ -114,19 +114,20 @@ The following Styles are for the navbar
     -4px -4px 7px #ffffff;
 }
 
-.mode{
-    background: linear-gradient(145deg, #d5d5d5, #fefefe);
+.mode {
+    background-image: url("../img/sun_icon.svg"), linear-gradient(145deg, #d5d5d5, #fefefe);
     box-shadow: 4px 4px 7px #c9c9c9, 
                 -4px -4px 7px #ffffff;
 }
 
 .mode:hover{
-    background: linear-gradient(145deg, #d5d5d5, #fefefe);
+    background-image: url("../img/sun_icon.svg"), linear-gradient(145deg, #d5d5d5, #fefefe);
     box-shadow: 4px 4px 7px #c9c9c9, 
                 -4px -4px 7px #ffffff;
 }
 
 .mode:active{
+    background-image: url("../img/sun_icon.svg"), linear-gradient(145deg, #d5d5d5, #fefefe);
     box-shadow: inset 4px 4px 7px #c9c9c9, 
                 inset -4px -4px 7px #ffffff;
 }
@@ -350,13 +351,13 @@ The following is for the contact me section
     }
 
     .mode_list{
-        background: #ededed;
-        background: linear-gradient(145deg, #d5d5d5, #fefefe);
+        background-image: url("../img/sun_icon.svg"), linear-gradient(145deg, #d5d5d5, #fefefe);
         box-shadow: 4px 4px 7px #c9c9c9, 
                     -4px -4px 7px #ffffff;
     }
     
     .mode_list:active{
+        background-image: url("../img/sun_icon.svg"), linear-gradient(145deg, #d5d5d5, #fefefe);
         box-shadow: inset 4px 4px 7px #c9c9c9, 
                     inset -4px -4px 7px #ffffff;
     }

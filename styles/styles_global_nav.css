@@ -178,6 +178,8 @@ html, body{
         height: 36px;
         box-sizing: border-box;
         border-radius: 5px;
+        background-position: center;
+        background-size: cover;
     }
 
     .mode:hover{
@@ -317,6 +319,8 @@ html, body{
         height: 36px;
         box-sizing: border-box;
         border-radius: 5px;
+        background-position: center;
+        background-size: cover;
     }
 
     .mode_list:hover{
