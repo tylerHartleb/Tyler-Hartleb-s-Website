@@ -248,6 +248,14 @@ The following is for the portfolio section
                  -5px -5px 10px #333333;
 }
 
+#portfolio_li .card .read_more .btn_arw{
+    color: #ededed;
+}
+
+#portfolio_li.active .card .read_more .btn_arw {
+    color: #ededed;
+}
+
 /* 
 The following is for the contact me section
 */
