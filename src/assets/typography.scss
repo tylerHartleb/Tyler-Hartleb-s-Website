@@ -1,0 +1,45 @@
+// Styles for the typography of the website
+@use 'src/assets/variables' as *;
+
+// Heading classes
+.heading-xl {
+    font-size: $heading-xl
+}
+
+.heading-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.heading-lg {
+    font-size: $heading-lg;
+}
+
+.heading-md {
+    font-size: $heading-md;
+}
+
+.text-spaced {
+    letter-spacing: 0.1em;
+}
+
+.text-bold {
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.light-text {
+    @extend .text-spaced;
+    font-weight: 300;
+}
+
+
+
+
+
+
+
+
+
+
+
