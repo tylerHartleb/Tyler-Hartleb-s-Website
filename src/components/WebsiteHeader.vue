@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-	import { nextTick, onMounted, ref, inject, watch } from 'vue';
+	import { nextTick, onMounted, reactive, ref } from 'vue';
 	import { useBreakpoints } from '../scripts/breakpoints';
 	import { useEventListener } from '../scripts/event';
  
@@ -48,19 +48,56 @@
 
 	useEventListener(window, 'resize', resizeWidth);
 
-	// Navigation
+	// Website navigation functionality
+	const sections = {
+		'home': { element: '.main-section', active: true },
+		'about': { element: '.about-section', active: false },
+		'skills': { element: '.skills-section', active: false},
+		'projects': { element: '.projects-section', active: false}
+	}
 
-	const { navList, updateActive } = inject('navigation');
+	const navList = reactive(sections);
 
-	const activeElement = inject('read-only-active-element');
+	const activeElement = ref('home');
 
-	const pauseObserver = inject('pauseObserver');
+	async function updateActive(title) {
+		navList[activeElement.value].active = false;
+		navList[title].active = true;
+		activeElement.value = title;
+		if (!isMobile.value) await moveActiveMarker(title);
+	}
 
-	watch(activeElement, async (newValue) => {
-		await nextTick();
+	function debounce(callback, interval) {
+		let debounceTimeoutId;
 
-		await moveActiveMarker(newValue);
-	})
+		return function(...args) {
+			clearTimeout(debounceTimeoutId);
+			debounceTimeoutId = setTimeout(() => callback.apply(this, args), interval);
+		};
+	}
+
+	async function scrollHandler() {
+		if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2) {
+			updateActive('projects');
+			return;
+		}
+	
+		Object.keys(navList).reverse().every((key) => {
+			const element = document.getElementById(key)
+			const elementPosition = element.getBoundingClientRect().top
+			const headerOffset = root.value.scrollHeight;
+			const targetPosition = elementPosition + window.pageYOffset - headerOffset - 32;
+
+			if (targetPosition < window.scrollY && key != activeElement) {
+				updateActive(key);
+				return false;
+			}
+
+			return true;
+		})
+	}
+
+	useEventListener(window, 'scroll', debounce(scrollHandler, 250), { passive: true })
 
 	// Mobile functionality
 
@@ -103,17 +140,11 @@
 
 	function calculateWidth(classString) {
 		const element = root.value.querySelector('._' + classString)
-		return element.scrollWidth
+		return element?.scrollWidth
 	}
 
 	async function scrollToViewAdjusted(element) {
-		pauseObserver(true);
-		await smoothScroll(document.getElementById(element));
-		pauseObserver(false);
-	}
-
-	function smoothScroll(element) {
-		const elementPosition = element.getBoundingClientRect().top
+		const elementPosition = document.getElementById(element).getBoundingClientRect().top
 		const headerOffset = root.value.scrollHeight;
 		const targetPosition = elementPosition + window.pageYOffset - headerOffset;
 	
@@ -121,28 +152,6 @@
 			top: targetPosition,
 			behavior: "smooth"
 		});
-
-		return new Promise((resolve) => {
-			const failed = setTimeout(() => {
-				resolve();
-			}, 250);
-
-			const scrollHandler = () => {
-				const bottomOfScreen = document.documentElement.scrollHeight - document.documentElement.scrollTop === document.documentElement.clientHeight
-				if (window.pageYOffset === targetPosition || bottomOfScreen) {
-					window.removeEventListener("scroll", scrollHandler);
-					clearTimeout(failed);
-					resolve();
-				}
-			}
-
-			if (self.pageYOffset === targetPosition) {
-				clearTimeout(failed);
-				resolve();
-			} else {
-				window.addEventListener("scroll", scrollHandler);
-			}
-		})
 	}
 
 	onMounted(() => {
@@ -328,7 +337,7 @@
 			left: 0;
 			position: absolute;
 			top: 0;
-			transition: all 0.2s ease-in;
+			transition: all 0.25s ease-in;
 			z-index: 1;
 		}
 	}
