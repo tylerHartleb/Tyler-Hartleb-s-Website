@@ -54,6 +54,8 @@
 
 	const activeElement = inject('read-only-active-element');
 
+	const pauseObserver = inject('pauseObserver');
+
 	watch(activeElement, async (newValue) => {
 		await nextTick();
 
@@ -104,15 +106,43 @@
 		return element.scrollWidth
 	}
 
-	function scrollToViewAdjusted(element) {
-		const elementPosition = document.getElementById(element).getBoundingClientRect().top
+	async function scrollToViewAdjusted(element) {
+		pauseObserver(true);
+		await smoothScroll(document.getElementById(element));
+		pauseObserver(false);
+	}
+
+	function smoothScroll(element) {
+		const elementPosition = element.getBoundingClientRect().top
 		const headerOffset = root.value.scrollHeight;
-		const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+		const targetPosition = elementPosition + window.pageYOffset - headerOffset;
 	
 		window.scrollTo({
-			top: offsetPosition,
+			top: targetPosition,
 			behavior: "smooth"
 		});
+
+		return new Promise((resolve) => {
+			const failed = setTimeout(() => {
+				resolve();
+			}, 250);
+
+			const scrollHandler = () => {
+				const bottomOfScreen = document.documentElement.scrollHeight - document.documentElement.scrollTop === document.documentElement.clientHeight
+				if (window.pageYOffset === targetPosition || bottomOfScreen) {
+					window.removeEventListener("scroll", scrollHandler);
+					clearTimeout(failed);
+					resolve();
+				}
+			}
+
+			if (self.pageYOffset === targetPosition) {
+				clearTimeout(failed);
+				resolve();
+			} else {
+				window.addEventListener("scroll", scrollHandler);
+			}
+		})
 	}
 
 	onMounted(() => {

@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-    import { ref, onMounted, useSlots, computed } from 'vue'
+    import { ref, useSlots, computed } from 'vue'
 
     import Card from './Card.vue';
 
@@ -39,10 +39,6 @@
             type: String,
             required: true
         }
-    })
-
-    onMounted(() => {
-        console.log(showAdditionalInfo)
     })
 
     // Modal logic
