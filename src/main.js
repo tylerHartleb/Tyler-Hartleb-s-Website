@@ -14,9 +14,6 @@ import aws_exports from './aws-exports';
 
 Amplify.configure(aws_exports); 
 
-
-Vue.config.productionTip = false;
-
 smoothscroll.polyfill();
 
 const app = createApp(App);
