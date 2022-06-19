@@ -23,10 +23,6 @@ l<template>
 
     import Card from '../Card.vue';
 
-    // import svgs
-
-
-
     const skillsList = ref([
         {
             title: 'Front-end',
@@ -58,10 +54,6 @@ l<template>
             ]
         }
     ])
-
-    function resolveImageSrc(url) {
-        return new URL('../../assets/images/' + url, import.meta.url).href
-    }
 
 </script>
 
