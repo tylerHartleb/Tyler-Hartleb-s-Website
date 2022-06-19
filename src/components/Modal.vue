@@ -85,6 +85,7 @@
     .modal__header {
         display: flex;
         justify-content: flex-end;
+        padding-bottom: 1rem;
     }
 
     .modal__close-btn {

@@ -2,8 +2,10 @@
     <div class="project_wrapper _ar-shopping-tool">
         <Card :small="true" :title="title">
             <template #body>
-                <p class="project-card__summary" v-html="summary" />
-                <button v-if="showAdditionalInfo" class="button-primary" @click="openModal()">
+                <p class="project-card__summary center" v-html="summary" />
+            </template>
+            <template #controls v-if="showAdditionalInfo">
+                <button class="button-primary" @click="openModal()">
                     More details
                 </button>
             </template>

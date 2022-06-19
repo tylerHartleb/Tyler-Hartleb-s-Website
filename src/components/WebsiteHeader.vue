@@ -86,7 +86,7 @@
 			const element = document.getElementById(key)
 			const elementPosition = element.getBoundingClientRect().top
 			const headerOffset = root.value.scrollHeight;
-			const targetPosition = elementPosition + window.pageYOffset - headerOffset - 32;
+			const targetPosition = elementPosition + window.pageYOffset - headerOffset - 16;
 
 			if (targetPosition < window.scrollY && key != activeElement) {
 				updateActive(key);

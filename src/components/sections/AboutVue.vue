@@ -4,9 +4,13 @@
         <p class="about-section__text">
             My name is Tyler Hartleb, I am a fourth year Computer Science Honours student at the University of Calgary. I am currently working at WestJet as a front-end developer intern, implementing responsive designs using modern JavaScript frameworks.
         </p>
-        <a class="button-primary" aria-label="(Opens in a new tab)" href="" target="_blank" v-html="'Resume'" />
+        <a class="button-primary" aria-label="(Opens in a new tab)" :href="resolveFileSrc('resume.pdf')" target="_blank" v-html="'Resume'" />
     </div>
 </template>
+
+<script setup>
+    import { resolveFileSrc } from '../../scripts/functions.js'
+</script>
 
 <style lang="scss">
 
