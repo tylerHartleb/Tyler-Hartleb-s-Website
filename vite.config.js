@@ -21,4 +21,7 @@ export default defineConfig({
       './runtimeConfig': './runtimeConfig.browser',
     },
   },
+  define: {
+    "global": {},
+  },
 });
