@@ -1,0 +1,28 @@
+// Styling for the buttons on the website
+
+button {
+    background: none;
+    background-color: none;
+    border: none;
+}
+
+.button-primary {
+    border-radius: 30px;
+    background-color: var(--color-button);
+    color: var(--color-button-text);
+    justify-content: center;
+    padding: 0.5rem 1.5rem;
+    text-decoration: none;
+
+    &:hover {
+        background-color: var(--color-button-hover);
+        color: var(--color-button-text);
+    }
+
+    &:focus-visible {
+        outline-color: var(--color-button);
+        outline-offset: 3px;
+        outline-style: solid;
+        outline-width: medium;
+    }
+}
