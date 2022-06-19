@@ -12,7 +12,7 @@
                         </p>
                         <ul class="links">
                             <li>
-                                <a aria-label="(Opens in a new tab)" :href="resolveFileSrc('cpsc-599.pdf')" target="_blank">
+                                <a aria-label="(Opens in a new tab)" :href="researchPaper" target="_blank">
                                     <i class="fa-solid fa-book fa-2xl button-link" />
                                 </a>
                             </li>
@@ -48,9 +48,8 @@
 
 <script setup>
     import { reactive } from 'vue'
-    import { resolveFileSrc } from '../../scripts/functions.js'
-
     import Project from '../Project.vue';
+    import researchPaper from '@/assets/files/cpsc-599.pdf';
 
     const { arApp } = reactive({
         arApp: {

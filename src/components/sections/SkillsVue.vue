@@ -7,7 +7,7 @@ l<template>
                     <template #body>
                         <ul>
                             <li class="skills-card__item" v-for="{skill, svg} in skills">
-                                <img class="skill-card__image" :src="resolveImageSrc(svg)" aria-hidden="true">
+                                <img class="skill-card__image" :src="svg" aria-hidden="true">
                                 <span v-html="skill" />
                             </li>
                         </ul>
@@ -23,34 +23,38 @@ l<template>
 
     import Card from '../Card.vue';
 
+    // import svgs
+
+
+
     const skillsList = ref([
         {
             title: 'Front-end',
             skills: [
-                { skill: 'HTML', svg: 'frontend/html.svg' },
-                { skill: 'CSS', svg: 'frontend/css.svg' },
-                { skill: 'JavaScript', svg: 'frontend/javascript.svg' },
-                { skill: 'Vue.js', svg: 'frontend/vue.svg' },
-                { skill: 'React', svg: 'frontend/react.svg' },
-                { skill: 'SASS / SCSS', svg: 'frontend/scss.svg' },
+                { skill: 'HTML', svg: new URL('../../assets/images/frontend/html.svg', import.meta.url).href },
+                { skill: 'CSS', svg: new URL('../../assets/images/frontend/css.svg', import.meta.url).href },
+                { skill: 'JavaScript', svg: new URL('../../assets/images/frontend/javascript.svg', import.meta.url).href },
+                { skill: 'Vue.js', svg: new URL('../../assets/images/frontend/vue.svg', import.meta.url).href },
+                { skill: 'React', svg: new URL('../../assets/images/frontend/react.svg', import.meta.url).href },
+                { skill: 'SASS / SCSS', svg: new URL('../../assets/images/frontend/scss.svg', import.meta.url).href },
             ]
         },
         {
             title: 'Back-end',
             skills: [
-                { skill: 'Java', svg: 'backend/java.svg' },
-                { skill: 'Python', svg: 'backend/python.svg' },
-                { skill: 'C++', svg: 'backend/c.svg' },
-                { skill: 'Haskell', svg: 'backend/haskell.svg' },
+                { skill: 'Java', svg: new URL('../../assets/images/backend/java.svg', import.meta.url).href },
+                { skill: 'Python', svg: new URL('../../assets/images/backend/python.svg', import.meta.url).href },
+                { skill: 'C++', svg: new URL('../../assets/images/backend/c.svg', import.meta.url).href },
+                { skill: 'Haskell', svg: new URL('../../assets/images/backend/haskell.svg', import.meta.url).href },
             ]
         },
         {
             title: 'Other',
             skills: [
-                { skill: 'Node.js', svg: 'other/node.svg' },
-                { skill: 'Git / GitHub', svg: 'other/git.svg' },
-                { skill: 'Azure', svg: 'other/azure.svg' },
-                { skill: 'Figma', svg: 'other/figma.svg'}
+                { skill: 'Node.js', svg: new URL('../../assets/images/other/node.svg', import.meta.url).href },
+                { skill: 'Git / GitHub', svg: new URL('../../assets/images/other/git.svg', import.meta.url).href },
+                { skill: 'Azure', svg: new URL('../../assets/images/other/azure.svg', import.meta.url).href },
+                { skill: 'Figma', svg: new URL('../../assets/images/other/figma.svg', import.meta.url).href}
             ]
         }
     ])
