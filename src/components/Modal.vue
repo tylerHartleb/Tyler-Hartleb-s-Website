@@ -1,25 +1,29 @@
 <template>
     <Teleport to="body">
         <Transition name="modal">
-            <div v-if="show" class="modal__backdrop">
-                <div class="modal__wrapper">
-                    <div class="modal__container">
-                        <div class="modal__header">
-                            <button aria-label="Close modal" class="modal__close-btn" @click="closeModal()">
-                                <i class="fa-solid fa-xmark fa-2xl" />
-                            </button>
+            <div v-if="show" class="modal" ref="modal" tabindex="-1" @keydown.esc="closeModal()">
+                <FocusTrap :active="show">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button aria-label="Close" class="modal__close-btn" @click="closeModal()">
+                                    <i class="fa-solid fa-xmark fa-2xl" aria-hidden="true" />
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <slot name="body" />
+                            </div>
                         </div>
-
-                        <slot name="body" />
                     </div>
-                </div>
+                </FocusTrap>
             </div>
         </Transition>
     </Teleport>
 </template>
 
 <script setup>
-    import { ref, watch } from 'vue'
+    import { ref, watch, nextTick } from 'vue'
+    import { FocusTrap } from 'focus-trap-vue'
 
     const props = defineProps({
         display: {
@@ -32,11 +36,17 @@
 
     const show = ref(false)
 
-    function openModal() {
+    const modal = ref(null)
+
+    async function openModal() {
+        document.body.classList.add('_no-scroll');
         show.value = true;
+        await nextTick();
+        modal.value.focus();
     }
 
     function closeModal() {
+        document.body.classList.remove('_no-scroll');
         show.value = false;
         emit('closed')
     }
@@ -52,40 +62,23 @@
 
 <style lang="scss">
 
-    .modal__backdrop {
+    .modal {
         background-color: rgba(0, 0, 0, 0.5);
         display: table;
-        height: 100vh;
-        height: 100dvh;
-        left: 0;
-        position: fixed;
-        top: 0;
-        transition: opacity 0.3s ease;
-        width: 100vw;
-        width: 100dvw;
-        z-index: 9998;
     }
 
-    .modal__wrapper {
-        display: table-cell;
-        vertical-align: middle;
+    .modal-dialog-scrollable .modal-content {
+        max-height: 75%;
     }
 
-    .modal__container {
+    .modal-content {
         background-color: var(--color-background);
         border-radius: 5px;
-        //box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
-        margin: 0px auto;
-        padding: 20px 30px;
-        transition: all 0.3s ease;
-        width: 50dvw;
-        width: 50vw;
     }
 
-    .modal__header {
-        display: flex;
+    .modal-header {
+        border: none;
         justify-content: flex-end;
-        padding-bottom: 1rem;
     }
 
     .modal__close-btn {

@@ -59,6 +59,10 @@ body {
     transition: color 0.5s, background-color 0.5s;
     overflow: hidden;
     overflow-y: auto;
+
+    &._no-scroll {
+        overflow-y: hidden;
+    }
 }
 
 ul {
