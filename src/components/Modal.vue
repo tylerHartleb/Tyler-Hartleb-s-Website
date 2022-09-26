@@ -48,14 +48,14 @@
     function closeModal() {
         document.body.classList.remove('_no-scroll');
         show.value = false;
-        emit('closed')
+        emit('closed');
     }
 
     watch(() => props.display, (display) => {
         if (display) {
-            openModal()
+            openModal();
         } else {
-            closeModal()
+            closeModal();
         }
     })
 </script>
