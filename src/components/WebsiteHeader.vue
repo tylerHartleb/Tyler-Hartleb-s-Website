@@ -271,6 +271,12 @@
 			}
 		}
 
+		&:has(.nav__item._active:hover) {
+			+ .active-marker {
+				background-color: var(--color-button_hover);
+			}
+		}
+
 		@media (min-width: 768px) {
 			align-items: center;
 			background-color: var(--nav-color);
@@ -337,8 +343,12 @@
 			left: 0;
 			position: absolute;
 			top: 0;
-			transition: all 0.25s ease-in;
+			transition: all 0.2s ease-in;
 			z-index: 1;
+
+			&:hover {
+				background-color: var(--color-button_hover);
+			}
 		}
 	}
 

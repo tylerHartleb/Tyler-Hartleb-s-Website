@@ -1,0 +1,17 @@
+@use './functions.scss' as functions;
+
+@mixin change-theme($color) {
+    // Color wave
+    --color-wave-1: #{functions.color-opacity($color, 0.7)};
+    --color-wave-2: #{functions.color-opacity($color, 0.5)};
+    --color-wave-3: #{functions.color-opacity($color, 0.3)};
+
+    --color-button: #{$color};
+    --color-button_hover: #{functions.adjust-color-lightness($color, -10%)};
+
+    @media(prefers-color-scheme: dark) {
+        --color-button-text: #ffffff;
+        --color-text_inverted: #fff;
+        --color-button_hover: #{functions.adjust-color-lightness($color, 10%)};
+    }
+}
