@@ -1,6 +1,8 @@
+@use './functions.scss' as functions;
+@use './mixins.scss' as mixins;
 @forward './variables.scss';
 @forward './buttons.scss';
-@forward './typography';
+@forward './typography.scss';
 
 @import 'https://fonts.googleapis.com/css?family=Poppins|Poppins:300,400,500,700';
 
@@ -8,38 +10,57 @@
 // Base styles
 
 :root {
+    /* These styles are not changed by the theme */
     --color-background: #ffffff;
-    
     --color-text: #000000;
     --color-text_inverted: #ffffff;
     --nav-color: #D2D2D2;
-    --color-wave-1: rgb(0, 0, 0, 0.7);
-    --color-wave-2: rgb(0, 0, 0, 0.5);
-    --color-wave-3: rgb(0, 0, 0, 0.3);
     --color-wave-4: #ffffff;
+
+    /* Default theme */
+
+    // Color wave
+    --color-wave-1: #{functions.color-opacity(#000, 0.7)};
+    --color-wave-2: #{functions.color-opacity(#000, 0.5)};
+    --color-wave-3: #{functions.color-opacity(#000, 0.3)};
 
     // Button var colors
     --color-button: #252321;
     --color-button_inverted: #fff;
-    --color-button-hover: #000000;
+    --color-button_hover: #000000;
     --color-button-text: #ffffff;
-}
 
-@media (prefers-color-scheme: dark) {
-    :root {
+    @media (prefers-color-scheme: dark) {
         --color-background: #252321;
         --color-text: #ffffff;
         --color-text_inverted: #000000;
         --nav-color: #484848;
-        --color-wave-1: rgb(0, 0, 0, 0.7);
-        --color-wave-2: rgb(0, 0, 0, 0.5);
-        --color-wave-3: rgb(0, 0, 0, 0.3);
         --color-wave-4: #252321;
+
+        /* Default theme */
 
         // Button var colors
         --color-button: #ffffff;
         --color-button_inverted: #252321;
         --color-button-text: #000000;
+    }
+
+
+    /* Purple theme */
+    &._purple {
+        @include mixins.change-theme(#780DBF);
+    }
+
+    &._blue {
+        @include mixins.change-theme(#2424FF);
+    }
+
+    &._green {
+        @include mixins.change-theme(#2e8540);
+    }
+
+    &._red {
+        @include mixins.change-theme(#B91818);
     }
 }
 
