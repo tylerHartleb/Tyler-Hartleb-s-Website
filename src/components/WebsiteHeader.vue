@@ -164,6 +164,12 @@
 
 	$font-size-nav: 1.125rem;
 
+	html {
+		&:has(.header__nav-btn._active) {
+			background: #1D1D1F;
+		}
+	}
+
 
 	.header {
 		background-color: var(--color-background);

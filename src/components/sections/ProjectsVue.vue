@@ -2,6 +2,22 @@
     <div class="projects-section" id="projects">
         <h2 class="heading-title" v-html="'Projects'" />
         <ul class="projects__container">
+            <li class="project__item _digital-library">
+                <Project :title="digitalLibrary.title" :summary="digitalLibrary.summary">
+                    <template #info>
+                        <p>
+                            This project is a vertical prototype implemented using Windows Presentation Foundation developed using a task-centered design approach. The primary purpose of this prototype is to provide information about a Library’s digital and physical offerings. For example, the mobile app provides information about a book; for physical books, this may include the physical location; for digital books, the availability.
+                        </p>
+                        <ul class="links">
+                            <li>
+                                <a aria-label="(Opens in a new tab)" href="https://github.com/tylerHartleb/Digital-Library-Prototype" target="_blank">
+                                    <i class="fa-brands fa-github fa-2xl button-link" />
+                                </a>
+                            </li>
+                        </ul>
+                    </template>
+                </Project>
+            </li>
             <li class="project__item _ar-app">
                 <Project :title="arApp.title" :summary="arApp.summary">
                     <template #info>
@@ -25,7 +41,7 @@
                     </template>
                 </Project>
             </li>
-            <li class="project__item _ar-app">
+            <li class="project__item _health-app">
                 <Project :title="healthRegistry.title" :summary="healthRegistry.summary">
                     <template #info>
                         <p>My team developed a functional prototype of a national health registry. Current health registries are complex and fragmented, our goal was to improve this by building
@@ -50,6 +66,13 @@
     import { reactive } from 'vue'
     import Project from '../Project.vue';
     import researchPaper from '@/assets/files/cpsc-599.pdf';
+
+    const { digitalLibrary } = reactive({
+        digitalLibrary: {
+            title: 'Digital Library Prototype',
+            summary: 'A vertical prototype implemented in WPF using a task-centered approach.'
+        }
+    })
 
     const { arApp } = reactive({
         arApp: {
