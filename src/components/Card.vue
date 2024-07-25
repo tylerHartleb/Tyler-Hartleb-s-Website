@@ -29,6 +29,7 @@
     .card {
         background-color: var(--color-background);
         border-color: var(--nav-color);
+        color: var(--color-text);
         border-radius: 20px;
         height: functions.relative(500px);
         padding: 1rem;
