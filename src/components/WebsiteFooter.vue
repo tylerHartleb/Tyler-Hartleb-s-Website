@@ -22,7 +22,6 @@
     import { ref } from 'vue';
 
     const socials = ref([
-        { href: 'https://twitter.com/tyler_hartleb', name: 'twitter'},
         { href: 'https://github.com/tylerHartleb', name: 'github'},
     ])
 

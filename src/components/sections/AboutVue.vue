@@ -2,7 +2,7 @@
     <div class="about-section" id="about">
         <h2 class="heading-title about-section__title" v-html="'About me'" />
         <p class="about-section__text">
-            My name is Tyler Hartleb, I am a fourth year Computer Science Honours student at the University of Calgary. I am currently working at WestJet as a front-end developer intern, implementing responsive designs using modern JavaScript frameworks.
+            My name is Tyler Hartleb, and I hold an Honours degree in Computer Science from the University of Calgary. I am currently working at WestJet as a software developer, where I implement responsive designs and develop innovative solutions using modern JavaScript frameworks. In my free time, I enjoy building computers and exploring the latest advancements in technology.
         </p>
         <a class="button-primary" aria-label="(Opens in a new tab)" :href="resume" target="_blank" v-html="'Resume'" />
     </div>

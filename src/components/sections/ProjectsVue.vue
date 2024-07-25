@@ -2,6 +2,39 @@
     <div class="projects-section" id="projects">
         <h2 class="heading-title" v-html="'Projects'" />
         <ul class="projects__container">
+            <li class="project__item _emotion">
+                <Project :title="emotionInMotion.title" :summary="emotionInMotion.summary">
+                    <template #info>
+                        <p>
+                            An elicitation study to gain a better understanding of user preferences for non-anthropomorphic 
+                            robots should express emotions.
+                        </p>
+                        <ul class="links">
+                            <li>
+                                <a aria-label="(Opens in a new tab)" :href="emotionPaper" target="_blank">
+                                    <i class="fa-solid fa-book fa-2xl button-link" />
+                                </a>
+                            </li>
+                        </ul>
+                    </template>
+                </Project>
+            </li>
+            <li class="project__item _kanban">
+                <Project :title="kanban.title" :summary="kanban.summary">
+                    <template #info>
+                        <p>
+                            This project is implemented using TypeScript and React, offering account management features. Users can create boards, share them with other accounts, and add cards to the boards for effective collaboration and organization.
+                        </p>
+                        <ul class="links">
+                            <li>
+                                <a aria-label="(Opens in a new tab)" href="https://github.com/tylerHartleb/Kanban-Project" target="_blank">
+                                    <i class="fa-brands fa-github fa-2xl button-link" />
+                                </a>
+                            </li>
+                        </ul>
+                    </template>
+                </Project>
+            </li>
             <li class="project__item _digital-library">
                 <Project :title="digitalLibrary.title" :summary="digitalLibrary.summary">
                     <template #info>
@@ -66,6 +99,22 @@
     import { reactive } from 'vue'
     import Project from '../Project.vue';
     import researchPaper from '@/assets/files/cpsc-599.pdf';
+    import emotionPaper from '@/assets/files/cpsc-584.pdf';
+
+    const { emotionInMotion } = reactive({
+        emotionInMotion: {
+            title: 'Emotion in Motion',
+            summary: 'A research study to better understand general user preference for how non-anthropomorphic robots should express emotions.',
+        }
+    })
+
+    const { kanban } = reactive({
+        kanban: {
+            title: 'Managerization',
+            summary: 'A minimalistic project management system designed to aid the overall productivity and management of project-based work.'
+        },
+
+    })
 
     const { digitalLibrary } = reactive({
         digitalLibrary: {
@@ -105,13 +154,13 @@
     .links {
         display: flex;
         gap: 1rem;
-    }
 
-    .button-link {
-        color: var(--color-button);
+        li a {
+            color: var(--color-button);
 
-        &:hover {
-            color: var(--color-button-hover);
+            &:hover {
+                color: var(--color-button_hover);
+            }
         }
-    }
+    }    
 </style>

@@ -46,13 +46,14 @@
 		}
 	}
 
-	useEventListener(window, 'resize', resizeWidth);
+	useEventListener(window, 'resize', resizeWidth, 100);
 
 	// Website navigation functionality
 	const sections = {
 		'home': { element: '.main-section', active: true },
 		'about': { element: '.about-section', active: false },
 		'skills': { element: '.skills-section', active: false},
+		'publications': { element: '.publications-section', active: false},
 		'projects': { element: '.projects-section', active: false}
 	}
 
